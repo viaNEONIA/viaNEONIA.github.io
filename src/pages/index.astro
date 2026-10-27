@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const projects=[{name:'StockLite',desc:'軽量在庫管理PWA',url:'https://vianeonia.github.io/stocklite/'},{name:'家計簿',desc:'収支・予算管理PWA',url:'https://vianeonia.github.io/kakeibo/'},{name:'FileHub',desc:'オフラインファイル管理',url:'https://github.com/viaNEONIA/filehub'},{name:'MagazineAmmoCheck',desc:'DayZ向けMOD',url:'https://github.com/viaNEONIA/MagazineAmmoCheck'}];
+---
+<BaseLayout title="ホーム"><section class="hero"><p class="muted">INDEPENDENT SOFTWARE DEVELOPMENT</p><h1>アイデアを、使えるソフトウェアへ。</h1><p>Webアプリ・PWA・ゲームMODなどの開発プロジェクトを紹介しています。</p><a class="button" href="/projects/">プロジェクトを見る</a></section><section><h2>Projects</h2><div class="cards">{projects.map(p=><article class="card"><h3>{p.name}</h3><p class="muted">{p.desc}</p><a href={p.url}>プロジェクトを見る</a></article>)}</div></section></BaseLayout>

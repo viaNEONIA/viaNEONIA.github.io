@@ -1,0 +1,5 @@
+---
+import '../styles/global.css';
+const { title = 'viaNEONIA', description = 'Webアプリ・PWA・ゲームMODの開発プロジェクト' } = Astro.props;
+---
+<!doctype html><html lang="ja"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><title>{title} | viaNEONIA</title></head><body><header><div class="wrap"><a href="/" aria-label="viaNEONIA ホーム"><strong>viaNEONIA</strong></a><nav aria-label="メインメニュー"><a href="/">ホーム</a><a href="/projects/">プロジェクト</a><a href="/about/">About</a></nav></div></header><main class="wrap"><slot/></main><footer><div class="wrap"><small>© viaNEONIA</small></div></footer></body></html>
