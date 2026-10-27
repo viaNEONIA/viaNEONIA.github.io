@@ -1,4 +1,39 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/projects';
+const categories = ['すべて', 'Webアプリ・PWA', 'DayZ MOD', '開発ツール'];
 ---
-<BaseLayout title="プロジェクト"><h1>プロジェクト</h1><p>公開・開発中のプロジェクトへのリンクです。</p><div class="cards"><article class="card"><h2>StockLite</h2><a href="https://vianeonia.github.io/stocklite/">アプリ</a></article><article class="card"><h2>家計簿</h2><a href="https://vianeonia.github.io/kakeibo/">アプリ</a></article><article class="card"><h2>FileHub</h2><a href="https://github.com/viaNEONIA/filehub">GitHub</a></article><article class="card"><h2>MagazineAmmoCheck</h2><a href="https://github.com/viaNEONIA/MagazineAmmoCheck">GitHub</a></article></div></BaseLayout>
+<BaseLayout title="プロジェクト">
+  <section class="page-intro"><p class="eyebrow">PROJECTS</p><h1>プロジェクト</h1><p class="muted">公開・開発中のアプリやMODを紹介します。</p></section>
+  <div class="filter-bar" role="group" aria-label="カテゴリで絞り込み">
+    {categories.map((category, i) => <button class="filter-button" type="button" data-filter={category} aria-pressed={i === 0 ? 'true' : 'false'}>{category}</button>)}
+  </div>
+  <div class="cards" id="project-grid">
+    {projects.map((project) => <article class="card" data-category={project.category}>
+      <span class="category">{project.category}</span>
+      <h2>{project.name}</h2>
+      <p class="muted">{project.description}</p>
+      <div class="card-links">
+        {project.app && <a href={project.app}>アプリを開く</a>}
+        <a href={project.repository}>GitHub</a>
+      </div>
+    </article>)}
+  </div>
+  <p id="no-projects" hidden>該当するプロジェクトはありません。</p>
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const cards = document.querySelectorAll<HTMLElement>('[data-category]');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      buttons.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      let count = 0;
+      cards.forEach((card) => {
+        const visible = filter === 'すべて' || card.dataset.category === filter;
+        card.hidden = !visible;
+        if (visible) count++;
+      });
+      const empty = document.getElementById('no-projects');
+      if (empty) empty.hidden = count > 0;
+    }));
+  </script>
+</BaseLayout>
