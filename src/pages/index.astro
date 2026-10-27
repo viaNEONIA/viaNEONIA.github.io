@@ -17,7 +17,7 @@ const featured = projects.filter((project) => project.featured);
         <span class="category">{project.category}</span>
         <h3>{project.name}</h3>
         <p class="muted">{project.description}</p>
-        <div class="card-links">
+        <div class="card-links"><a href={`/projects/${project.slug}/`}>詳細を見る</a>
           {project.app && <a href={project.app}>アプリを開く</a>}
           <a href={project.repository}>GitHub</a>
         </div>
