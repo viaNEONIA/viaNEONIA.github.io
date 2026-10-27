@@ -1,5 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const projects=[{name:'StockLite',desc:'軽量在庫管理PWA',url:'https://vianeonia.github.io/stocklite/'},{name:'家計簿',desc:'収支・予算管理PWA',url:'https://vianeonia.github.io/kakeibo/'},{name:'FileHub',desc:'オフラインファイル管理',url:'https://github.com/viaNEONIA/filehub'},{name:'MagazineAmmoCheck',desc:'DayZ向けMOD',url:'https://github.com/viaNEONIA/MagazineAmmoCheck'}];
+import { projects } from '../data/projects';
+const featured = projects.filter((project) => project.featured);
 ---
-<BaseLayout title="ホーム"><section class="hero"><p class="muted">INDEPENDENT SOFTWARE DEVELOPMENT</p><h1>アイデアを、使えるソフトウェアへ。</h1><p>Webアプリ・PWA・ゲームMODなどの開発プロジェクトを紹介しています。</p><a class="button" href="/projects/">プロジェクトを見る</a></section><section><h2>Projects</h2><div class="cards">{projects.map(p=><article class="card"><h3>{p.name}</h3><p class="muted">{p.desc}</p><a href={p.url}>プロジェクトを見る</a></article>)}</div></section></BaseLayout>
+<BaseLayout title="ホーム">
+  <section class="hero">
+    <p class="eyebrow">INDEPENDENT SOFTWARE DEVELOPMENT</p>
+    <h1>アイデアを、使えるソフトウェアへ。</h1>
+    <p>Webアプリ・PWA・DayZ MODなどの開発プロジェクトを紹介しています。</p>
+    <a class="button" href="/projects/">すべてのプロジェクトを見る</a>
+  </section>
+  <section aria-labelledby="featured-heading">
+    <div class="section-heading"><h2 id="featured-heading">Featured projects</h2><a href="/projects/">一覧を見る</a></div>
+    <div class="cards">
+      {featured.map((project) => <article class="card">
+        <span class="category">{project.category}</span>
+        <h3>{project.name}</h3>
+        <p class="muted">{project.description}</p>
+        <div class="card-links">
+          {project.app && <a href={project.app}>アプリを開く</a>}
+          <a href={project.repository}>GitHub</a>
+        </div>
+      </article>)}
+    </div>
+  </section>
+</BaseLayout>
