@@ -13,7 +13,7 @@ const categories = ['すべて', 'Webアプリ・PWA', 'DayZ MOD', '開発ツー
       <span class="category">{project.category}</span>
       <h2>{project.name}</h2>
       <p class="muted">{project.description}</p>
-      <div class="card-links">
+      <div class="card-links"><a href={`/projects/${project.slug}/`}>詳細を見る</a>
         {project.app && <a href={project.app}>アプリを開く</a>}
         <a href={project.repository}>GitHub</a>
       </div>
