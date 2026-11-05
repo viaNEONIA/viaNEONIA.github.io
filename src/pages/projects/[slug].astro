@@ -19,7 +19,7 @@ const { project } = Astro.props as { project: Project };
     <span aria-current="page">{project.name}</span>
   </nav>
   <article class="project-detail">
-    <p class="eyebrow">{project.category}</p>
+    <p class="eyebrow">{project.category} · {project.status}</p>
     <h1>{project.name}</h1>
     <p class="project-lead">{project.description}</p>
     <section aria-labelledby="links-heading">
