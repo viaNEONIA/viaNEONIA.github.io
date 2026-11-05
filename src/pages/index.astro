@@ -14,10 +14,10 @@ const featured = projects.filter((project) => project.featured);
     <div class="section-heading"><h2 id="featured-heading">Featured projects</h2><a href="/projects/">一覧を見る</a></div>
     <div class="cards">
       {featured.map((project) => <article class="card">
-        <span class="category">{project.category}</span>
+        <span class="category">{project.category} · {project.status}</span>
         <h3>{project.name}</h3>
         <p class="muted">{project.description}</p>
-        <div class="card-links">
+        <div class="card-links"><a href={`/projects/${project.slug}/`}>詳細を見る</a>
           {project.app && <a href={project.app}>アプリを開く</a>}
           <a href={project.repository}>GitHub</a>
         </div>
