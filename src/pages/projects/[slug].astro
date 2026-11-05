@@ -22,6 +22,16 @@ const { project } = Astro.props as { project: Project };
     <p class="eyebrow">{project.category} · {project.status}</p>
     <h1>{project.name}</h1>
     <p class="project-lead">{project.description}</p>
+    {project.slug === 'android-memo' && (
+      <section aria-labelledby="memo-ui-heading" class="memo-ui-showcase">
+        <h2 id="memo-ui-heading">UI紹介・画面イメージ</h2>
+        <p class="muted">ホーム、編集、長押しメニュー、共有登録の操作画面をまとめた紹介画像です。個人のメモ内容はぼかしてあります。実装状況はGitHubをご確認ください。</p>
+        <a href="/images/projects/android-memo/ui-overview.png" target="_blank" rel="noopener noreferrer" aria-label="統合メモのUI紹介画像を拡大して開く">
+          <img src="/images/projects/android-memo/ui-overview.png" alt="統合メモのホーム一覧、メモ編集、長押しメニュー、共有登録の4画面を紹介した画像。個人のメモ内容はぼかし加工済み。" loading="lazy" decoding="async" width="1169" height="1279" class="memo-ui-poster" />
+        </a>
+        <p class="muted">※ 開発中のUI紹介画像です。画面構成や機能は変更される場合があります。</p>
+      </section>
+    )}
     <section aria-labelledby="links-heading">
       <h2 id="links-heading">関連リンク</h2>
       <div class="detail-actions">
