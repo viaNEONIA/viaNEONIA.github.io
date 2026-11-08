@@ -12,7 +12,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'android-memo', name: '統合メモ', category: 'Androidアプリ',
-    description: 'URL・文章・画像・ファイルをまとめて保存。あとで読む、検索、タグ整理、ピン留め、アーカイブに対応するAndroidメモアプリ。v0.7.0-dev。実機確認は一部未完了。',
+    description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityのリーダーモード、ループスクロール、タグ別フォルダ、自動タグ、ピン留め、アーカイブに対応。v0.7.0-dev、最新版の実機確認は未完了。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/Android-Memo', featured: true
   },
   {
