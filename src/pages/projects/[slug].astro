@@ -32,6 +32,31 @@ const { project } = Astro.props as { project: Project };
         <p class="muted">※ 開発中のUI紹介画像です。画面構成や機能は変更される場合があります。</p>
       </section>
     )}
+    {project.slug === 'android-memo' && (
+      <section aria-labelledby="memo-features-heading" class="memo-feature-showcase">
+        <h2 id="memo-features-heading">主な機能・最新アップデート</h2>
+        <p class="muted">開発版 0.7.0-dev。2026年11月8日までの実装情報をもとに掲載しています。</p>
+        <div class="memo-feature-grid">
+          {[
+            { title: 'リーディングモード', description: 'Mozilla Readabilityで公開Web記事の本文を抽出。読みやすい全画面表示で閲覧できます。' },
+            { title: 'ループスクロール', description: '通常一覧・ピン留め・アーカイブ・タグフォルダで、先頭と末尾をつないで移動できます。余白がある場合は下寄せ表示になります。' },
+            { title: 'スクロール振動', description: '1行分のスクロールで振動。設定からオフ・弱・中・強を選択できます。' },
+            { title: 'タグ別フォルダ', description: 'タグごとにメモを分類し、フォルダ内の件数を表示。最近使ったタグの候補も表示します。' },
+            { title: '自動タグ付け', description: 'URLの入力で「web」、店名の入力で「買い物」を保存時に自動追加します。' },
+            { title: 'ピン留め・手動並び替え', description: '長押しメニューから上下移動し、希望する行で固定。ピン留め専用一覧も利用できます。' },
+            { title: '共有から登録', description: 'Androidの共有メニューからURL・テキスト・画像・ファイルを取り込み、メモやタグを付けて保存します。' },
+            { title: 'サイトアイコン', description: 'HTTPSサイトのアイコンを取得し、端末内にキャッシュ。取得済みのアイコンはオフラインでも利用できます。' },
+            { title: 'アーカイブ・バックアップ', description: 'メモを削除せずに整理。JSONの書き出し・追加復元に対応します。添付本体やピン位置はバックアップ対象外です。' }
+          ].map((feature) => (
+            <article class="memo-feature">
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </article>
+          ))}
+        </div>
+        <p class="muted">検証状況：ビルド・単体試験33件は成功。最新版の実機確認は未完了です。記事本文の取得や外部サイト閲覧には通信が必要です。</p>
+      </section>
+    )}
     <section aria-labelledby="links-heading">
       <h2 id="links-heading">関連リンク</h2>
       <div class="detail-actions">
