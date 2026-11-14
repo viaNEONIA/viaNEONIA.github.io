@@ -11,6 +11,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'ui-studio', name: 'UI Studio', category: '開発ツール',
+    description: 'PCブラウザでUI設計と会議資料作成を行うプロトタイプエディター。A4/A3、PDF背景取込、線・矢印・頂点編集、JSON・HTML・PDF・PPTX出力に対応。試作版v0.6、ブラウザ操作試験は未完了。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true
+  },
+  {
+    slug: 'quick-backpack-drop', name: 'Quick Backpack Drop', category: 'DayZ MOD',
+    description: 'DayZ 1.29/1.30向け。バックパックに装着した専用トリガーをホットバーから使い、収納物を維持したままバッグを下ろすMOD。RC.2で基本動作の実機試験済み。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/QuickBackpackDrop', featured: true
+  },
+  {
+    slug: 'backpack-lock', name: 'BackPack Lock', category: 'DayZ MOD',
+    description: '装備中バックパックのCargoアクセスを制限し、地面に置くと通常操作に戻すDayZ MOD。v1.29.6で基本機能の確認記録あり。追加の互換性検証は継続。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/BackPack_lock'
+  },
+  {
+    slug: 'inedia-config-editor', name: 'InediaInfectedAI Config Editor', category: '開発ツール',
+    description: 'DayZのInediaInfectedAI設定JSONをブラウザで編集する非公式GUI。mainはv9で、外部成果物v9.2は未統合。実ブラウザの正常動作基準は未確立。',
+    status: '技術検証中', repository: 'https://github.com/viaNEONIA/InediaInfectedAI-Config-Editor'
+  },
+  {
     slug: 'android-memo', name: '統合メモ', category: 'Androidアプリ',
     description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityのリーダーモード、ループスクロール、タグ別フォルダ、自動タグ、ピン留め、アーカイブに対応。v0.7.0-dev、最新版の実機確認は未完了。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/Android-Memo', featured: true
@@ -44,11 +64,6 @@ export const projects: Project[] = [
     slug: 'dayzspawn', name: 'LootControl', category: 'DayZ MOD',
     description: 'DayZのアイテム生成・退避・復元を独自制御するMOD。プレイヤー周辺のルート管理と保存方式をPhase 0で検証中。',
     status: '技術検証中', repository: 'https://github.com/viaNEONIA/dayzspawn'
-  },
-  {
-    slug: 'tfashub', name: 'TFAS Hub', category: '開発ツール',
-    description: 'TFX図面のレビュー・承認・手動シート統合を支援する共同管理ツール。OneDrive同期を利用するPhase 0技術検証中。',
-    status: '技術検証中', repository: 'https://github.com/viaNEONIA/tfashub'
   },
   {
     slug: 'mochidenkikeisann', name: '電気工事計算支援PWA', category: 'Webアプリ・PWA',
