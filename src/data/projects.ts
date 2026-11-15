@@ -12,7 +12,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: 'ui-studio', name: 'UI Studio', category: '開発ツール',
-    description: 'PCブラウザでUI設計と会議資料作成を行うプロトタイプエディター。A4/A3、PDF背景取込、線・矢印・頂点編集、JSON・HTML・PDF・PPTX出力に対応。試作版v0.6、ブラウザ操作試験は未完了。',
+    description: 'PCのChrome/Edgeで動くオフラインUI・会議資料エディター。A4/A3、PDF背景取込、レイヤー・図形編集、JSON・HTML・PDF・PPTX出力に対応。Node.js 24でビルドし、GitHub Actionsの成果物をPCに保存して利用。Chromium自動テストを導入済み。試作版v0.6。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true
   },
   {
@@ -32,7 +32,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'android-memo', name: '統合メモ', category: 'Androidアプリ',
-    description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityのリーダーモード、ループスクロール、タグ別フォルダ、自動タグ、ピン留め、アーカイブに対応。v0.7.0-dev、最新版の実機確認は未完了。',
+    description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityによる記事表示と端末標準機能を使う日本語翻訳、ループスクロール、タグ別フォルダ、ピン留め、アーカイブに対応。v0.7.0-dev、単体試験66件成功。実機確認は未完了。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/Android-Memo', featured: true
   },
   {
