@@ -35,10 +35,11 @@ const { project } = Astro.props as { project: Project };
     {project.slug === 'android-memo' && (
       <section aria-labelledby="memo-features-heading" class="memo-feature-showcase">
         <h2 id="memo-features-heading">主な機能・最新アップデート</h2>
-        <p class="muted">開発版 0.7.0-dev。2026年11月8日までの実装情報をもとに掲載しています。</p>
+        <p class="muted">開発版 0.7.0-dev。最新のREADME・仕様書に基づいて掲載しています。</p>
         <div class="memo-feature-grid">
           {[
             { title: 'リーディングモード', description: 'Mozilla Readabilityで公開Web記事の本文を抽出。読みやすい全画面表示で閲覧できます。' },
+            { title: '端末標準の日本語翻訳', description: 'Androidの対応端末ではリーダー内で日本語訳を表示し、原文と切り替えできます。翻訳言語データの準備が必要で、Pixel 7 Proの実機動作は未確認です。' },
             { title: 'ループスクロール', description: '通常一覧・ピン留め・アーカイブ・タグフォルダで、先頭と末尾をつないで移動できます。余白がある場合は下寄せ表示になります。' },
             { title: 'スクロール振動', description: '1行分のスクロールで振動。設定からオフ・弱・中・強を選択できます。' },
             { title: 'タグ別フォルダ', description: 'タグごとにメモを分類し、フォルダ内の件数を表示。最近使ったタグの候補も表示します。' },
@@ -54,7 +55,7 @@ const { project } = Astro.props as { project: Project };
             </article>
           ))}
         </div>
-        <p class="muted">検証状況：ビルド・単体試験33件は成功。最新版の実機確認は未完了です。記事本文の取得や外部サイト閲覧には通信が必要です。</p>
+        <p class="muted">検証状況：ビルド・単体試験66件は成功。最新版の実機確認は未完了です。記事本文の取得や外部サイト閲覧には通信が必要です。</p>
       </section>
     )}
     <section aria-labelledby="links-heading">
