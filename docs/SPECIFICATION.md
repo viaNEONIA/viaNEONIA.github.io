@@ -43,3 +43,9 @@
 - UI Studioの配布方式をGitHub ActionsのArtifact（PC保存・オフライン利用）に更新。Chromium自動試験導入を反映。公開Pagesアプリへのリンクは設定しない。
 - 統合メモにAndroid端末標準翻訳による日本語表示を追記。単体試験成功数を66件へ更新。実機確認は未完了。
 - サイト上の開発状態はリポジトリのREADMEから手動反映し、動作保証と混同しない。
+
+## 2026-11-21 実機・実用テスト確認の反映
+- 利用者の申告により、実際に動作する9プロジェクトについて現行機能の実機動作・実用テスト確認済みと表示する。
+- 確認済みの対象：UI Studio、Quick Backpack Drop、BackPack Lock、InediaInfectedAI Config Editor、統合メモ、StockLite、簡易家計簿、うちストック、MagazineAmmoCheck。
+- FileHub、LootControl、電気工事計算支援PWAは公開README上の設計・技術検証段階を維持。未実装機能を完成済みとしない。
+- 確認は利用者申告に基づくもので、全端末・全環境・将来機能の検証完了を意味しない。

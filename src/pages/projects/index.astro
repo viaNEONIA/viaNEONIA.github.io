@@ -10,7 +10,7 @@ const categories = ['すべて', 'Webアプリ・PWA', 'Androidアプリ', 'DayZ
   </div>
   <div class="cards" id="project-grid">
     {projects.map((project) => <article class="card" data-category={project.category}>
-      <span class="category">{project.category} · {project.status}</span>
+      <span class="category">{project.category} · {project.status}{project.tested ? ' · 実機・実用テスト確認済み' : ''}</span>
       <h2>{project.name}</h2>
       <p class="muted">{project.description}</p>
       <div class="card-links"><a href={`/projects/${project.slug}/`}>詳細を見る</a>

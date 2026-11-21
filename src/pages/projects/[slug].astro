@@ -19,7 +19,7 @@ const { project } = Astro.props as { project: Project };
     <span aria-current="page">{project.name}</span>
   </nav>
   <article class="project-detail">
-    <p class="eyebrow">{project.category} · {project.status}</p>
+    <p class="eyebrow">{project.category} · {project.status}{project.tested ? ' · 実機・実用テスト確認済み' : ''}</p>
     <h1>{project.name}</h1>
     <p class="project-lead">{project.description}</p>
     {project.slug === 'android-memo' && (
@@ -39,7 +39,7 @@ const { project } = Astro.props as { project: Project };
         <div class="memo-feature-grid">
           {[
             { title: 'リーディングモード', description: 'Mozilla Readabilityで公開Web記事の本文を抽出。読みやすい全画面表示で閲覧できます。' },
-            { title: '端末標準の日本語翻訳', description: 'Androidの対応端末ではリーダー内で日本語訳を表示し、原文と切り替えできます。翻訳言語データの準備が必要で、Pixel 7 Proの実機動作は未確認です。' },
+            { title: '端末標準の日本語翻訳', description: 'Androidの対応端末ではリーダー内で日本語訳を表示し、原文と切り替えできます。翻訳言語データの準備が必要で、対応端末での利用には翻訳言語データの準備が必要です。' },
             { title: 'ループスクロール', description: '通常一覧・ピン留め・アーカイブ・タグフォルダで、先頭と末尾をつないで移動できます。余白がある場合は下寄せ表示になります。' },
             { title: 'スクロール振動', description: '1行分のスクロールで振動。設定からオフ・弱・中・強を選択できます。' },
             { title: 'タグ別フォルダ', description: 'タグごとにメモを分類し、フォルダ内の件数を表示。最近使ったタグの候補も表示します。' },
@@ -55,9 +55,10 @@ const { project } = Astro.props as { project: Project };
             </article>
           ))}
         </div>
-        <p class="muted">検証状況：ビルド・単体試験66件は成功。最新版の実機確認は未完了です。記事本文の取得や外部サイト閲覧には通信が必要です。</p>
+        <p class="muted">検証状況：ビルド・単体試験66件は成功。現行機能の実機動作・実用テストは利用者確認済みです。記事本文の取得や外部サイト閲覧には通信が必要です。</p>
       </section>
     )}
+    {project.tested && <p class="muted">動作確認：利用者による実機動作・実用テスト確認済み（現行機能）。将来予定の機能やすべての動作環境を保証するものではありません。</p>}
     <section aria-labelledby="links-heading">
       <h2 id="links-heading">関連リンク</h2>
       <div class="detail-actions">
