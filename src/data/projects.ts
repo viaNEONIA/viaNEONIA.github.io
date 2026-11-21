@@ -14,49 +14,49 @@ export const projects: Project[] = [
   {
     slug: 'ui-studio', name: 'UI Studio', category: '開発ツール',
     description: 'PCのChrome/Edgeで動くオフラインUI・会議資料エディター。A4/A3、PDF背景取込、レイヤー・図形編集、JSON・HTML・PDF・PPTX出力に対応。Node.js 24でビルドし、GitHub Actionsの成果物をPCに保存して利用。Chromium自動テストを導入済み。試作版v0.6。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true
+    status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true,
     tested: true,
   },
   {
     slug: 'quick-backpack-drop', name: 'Quick Backpack Drop', category: 'DayZ MOD',
     description: 'DayZ 1.29/1.30向け。バックパックに装着した専用トリガーをホットバーから使い、収納物を維持したままバッグを下ろすMOD。RC.2で基本動作の実機試験済み。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/QuickBackpackDrop', featured: true
+    status: '開発中', repository: 'https://github.com/viaNEONIA/QuickBackpackDrop', featured: true,
     tested: true,
   },
   {
     slug: 'backpack-lock', name: 'BackPack Lock', category: 'DayZ MOD',
     description: '装備中バックパックのCargoアクセスを制限し、地面に置くと通常操作に戻すDayZ MOD。v1.29.6で基本機能の確認記録あり。追加の互換性検証は継続。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/BackPack_lock'
+    status: '開発中', repository: 'https://github.com/viaNEONIA/BackPack_lock',
     tested: true,
   },
   {
     slug: 'inedia-config-editor', name: 'InediaInfectedAI Config Editor', category: '開発ツール',
-    description: 'DayZのInediaInfectedAI設定JSONをブラウザで編集する非公式GUI。mainはv9で、外部成果物v9.2は未統合。実ブラウザの正常動作基準は未確立。',
-    status: '技術検証中', repository: 'https://github.com/viaNEONIA/InediaInfectedAI-Config-Editor'
+    description: 'DayZのInediaInfectedAI設定JSONをブラウザで編集する非公式GUI。mainはv9で、外部成果物v9.2は未統合。現行機能の実機動作・実用テストは利用者確認済み。',
+    status: '技術検証中', repository: 'https://github.com/viaNEONIA/InediaInfectedAI-Config-Editor',
     tested: true,
   },
   {
     slug: 'android-memo', name: '統合メモ', category: 'Androidアプリ',
-    description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityによる記事表示と端末標準機能を使う日本語翻訳、ループスクロール、タグ別フォルダ、ピン留め、アーカイブに対応。v0.7.0-dev、単体試験66件成功。実機確認は未完了。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/Android-Memo', featured: true
+    description: 'URL・文章・画像・ファイルをまとめて管理するAndroidメモアプリ。Mozilla Readabilityによる記事表示と端末標準機能を使う日本語翻訳、ループスクロール、タグ別フォルダ、ピン留め、アーカイブに対応。v0.7.0-dev、単体試験66件成功。現行機能の実機動作・実用テストは利用者確認済み。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/Android-Memo', featured: true,
     tested: true,
   },
   {
     slug: 'stocklite', name: 'StockLite', category: 'Webアプリ・PWA',
-    description: '数量・タグ・バーコードで管理する在庫管理PWA。iPhone/Androidの読取、バックアップ、Android写真OCRを開発中。最新版の実機確認は未完了。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/stocklite', app: 'https://vianeonia.github.io/stocklite/', featured: true
+    description: '数量・タグ・バーコードで管理する在庫管理PWA。iPhone/Androidの読取、バックアップ、Android写真OCRを開発中。現行機能の実機動作・実用テストは利用者確認済み。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/stocklite', app: 'https://vianeonia.github.io/stocklite/', featured: true,
     tested: true,
   },
   {
     slug: 'kakeibo', name: '簡易家計簿', category: 'Webアプリ・PWA',
     description: '収支・予算・繰越プール・定期収支を管理するオフライン対応PWA。JSONを使った家族間の手動データ統合にも対応。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/kakeibo', app: 'https://vianeonia.github.io/kakeibo/', featured: true
+    status: '開発中', repository: 'https://github.com/viaNEONIA/kakeibo', app: 'https://vianeonia.github.io/kakeibo/', featured: true,
     tested: true,
   },
   {
     slug: 'uchstock', name: 'うちストック', category: 'Androidアプリ',
-    description: '品目マスターと購入ロットを分けて管理する家庭向け在庫管理Androidアプリ。開発版v50.0-dev fixes-21は実機検証未完了。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/uchstock'
+    description: '品目マスターと購入ロットを分けて管理する家庭向け在庫管理Androidアプリ。開発版v50.0-dev fixes-21。現行機能の実機動作・実用テストは利用者確認済み。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/uchstock',
     tested: true,
   },
   {
@@ -66,8 +66,8 @@ export const projects: Project[] = [
   },
   {
     slug: 'magazineammocheck', name: 'MagazineAmmoCheck', category: 'DayZ MOD',
-    description: 'DayZでマガジンの残弾を6段階の概算で確認するMOD。v0.3の機能は実装済みで、名称変更後のビルド・署名・実機確認は未完了。',
-    status: '開発中', repository: 'https://github.com/viaNEONIA/MagazineAmmoCheck', featured: true
+    description: 'DayZでマガジンの残弾を6段階の概算で確認するMOD。v0.3の機能は実装済みで、現行機能の実機動作・実用テストは利用者確認済み。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/MagazineAmmoCheck', featured: true,
     tested: true,
   },
   {
