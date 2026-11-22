@@ -12,8 +12,13 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: 'ui-studio', name: 'UI Studio', category: '開発ツール',
-    description: 'PCのChrome/Edgeで動くオフラインUI・会議資料エディター。A4/A3、PDF背景取込、レイヤー・図形編集、JSON・HTML・PDF・PPTX出力に対応。Node.js 24でビルドし、GitHub Actionsの成果物をPCに保存して利用。Chromium自動テストを導入済み。試作版v0.6。',
+    slug: 'raku-calendar', name: 'rakuCalendar', category: 'Webアプリ・PWA',
+    description: 'スマートフォン向けの1日単位の予定表PWA。縦の時間軸で予定の重複・現在時刻・所要時間を表示し、表示／編集モード、画像1枚の添付、JSONバックアップ、ICS入出力に対応。',
+    status: '開発中', repository: 'https://github.com/viaNEONIA/rakuCalendar', app: 'https://vianeonia.github.io/rakuCalendar/', featured: true, tested: true,
+  },
+  {
+    slug: 'ui-studio', name: '会議ノート（旧 UI Studio）', category: '開発ツール',
+    description: 'PDF図面に線・図形・文字を重ねて会議の検討事項を記録するPCブラウザ用「会議ノート」（旧UI Studio）。PDF背景、レイヤー、スタンプ、HTMLスライド取込・注釈、AI向け構造化JSON出力に対応。ビルド済みHTMLをオフラインで利用できる試作版。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true,
     tested: true,
   },
@@ -61,7 +66,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'filehub', name: 'FileHub', category: '開発ツール',
-    description: 'WindowsのChrome/Edge向け、完全オフラインのファイル管理ツール。現在は仕様設計とPhase 0の技術検証段階で、製品機能は未実装。',
+    description: 'WindowsのChrome/Edge向け、完全オフラインのファイル管理ツール。仕様設計とPhase 0の技術検証を進めるオフラインファイル管理ツール。製品機能の実装状況はリポジトリを参照。',
     status: '技術検証中', repository: 'https://github.com/viaNEONIA/filehub', featured: true
   },
   {
@@ -77,7 +82,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'mochidenkikeisann', name: '電気工事計算支援PWA', category: 'Webアプリ・PWA',
-    description: '動力負荷・電圧降下・ケーブル・遮断器などの選定計算を支援する現場向けPWA。仕様v1.2、実装未着手。実務での選定には使用不可。',
+    description: '動力負荷・電圧降下・ケーブル・遮断器などの選定計算を支援する現場向けPWA。仕様v1.2の設計段階。実務での選定に利用する前に計算根拠と検証が必要。',
     status: '設計段階', repository: 'https://github.com/viaNEONIA/mochidenkikeisann'
   }
 ];
