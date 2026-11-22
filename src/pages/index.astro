@@ -7,11 +7,12 @@ const featured = projects.filter((project) => project.featured);
   <section class="hero">
     <p class="eyebrow">INDEPENDENT SOFTWARE DEVELOPMENT</p>
     <h1>アイデアを、使えるソフトウェアへ。</h1>
-    <p>Webアプリ・PWA・DayZ MODなどの開発プロジェクトを紹介しています。</p>
+    <p>会議ノート、統合メモ、rakuCalendar、在庫管理、DayZ MODなど、実際の課題から生まれた開発プロジェクトを紹介しています。</p>
+    <p class="muted">現在{projects.length}プロジェクトを掲載。各ページで主な機能・開発状況・GitHubリポジトリを確認できます。</p>
     <a class="button" href="/projects/">すべてのプロジェクトを見る</a>
   </section>
   <section aria-labelledby="featured-heading">
-    <div class="section-heading"><h2 id="featured-heading">Featured projects</h2><a href="/projects/">一覧を見る</a></div>
+    <div class="section-heading"><h2 id="featured-heading">注目のプロジェクト</h2><a href="/projects/">一覧を見る</a></div>
     <div class="cards">
       {featured.map((project) => <article class="card">
         <span class="category">{project.category} · {project.status}{project.tested ? ' · 実機・実用テスト確認済み' : ''}</span>
