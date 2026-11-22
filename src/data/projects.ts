@@ -96,6 +96,7 @@ export const projects: Project[] = [
   {
     slug: 'mochidenkikeisann', name: '電気工事計算支援PWA', category: 'Webアプリ・PWA',
     description: '動力負荷・電圧降下・ケーブル・遮断器などの選定計算を支援する現場向けPWA。仕様v1.2の設計段階。実務での選定に利用する前に計算根拠と検証が必要。',
-    status: '設計段階', repository: 'https://github.com/viaNEONIA/mochidenkikeisann'
+    status: '設計段階', repository: 'https://github.com/viaNEONIA/mochidenkikeisann',
+    highlights: ['動力負荷・電圧降下の計算支援を設計','ケーブル・遮断器選定の計算仕様を検討'],
   }
 ];
