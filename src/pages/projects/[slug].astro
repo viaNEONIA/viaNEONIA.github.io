@@ -22,7 +22,7 @@ const { project } = Astro.props as { project: Project };
     <p class="eyebrow">{project.category} · {project.status}{project.tested ? ' · 実機・実用テスト確認済み' : ''}</p>
     <h1>{project.name}</h1>
     <p class="project-lead">{project.description}</p>
-    {project.slug === 'android-memo' && (
+    {false && project.slug === 'android-memo' && (
       <section aria-labelledby="memo-ui-heading" class="memo-ui-showcase">
         <h2 id="memo-ui-heading">UI紹介・画面イメージ</h2>
         <p class="muted">ホーム、編集、長押しメニュー、共有登録の操作画面をまとめた紹介画像です。個人のメモ内容はぼかしてあります。実装状況はGitHubをご確認ください。</p>
@@ -39,7 +39,7 @@ const { project } = Astro.props as { project: Project };
         <div class="memo-feature-grid">
           {[
             { title: 'リーディングモード', description: 'Mozilla Readabilityで公開Web記事の本文を抽出。読みやすい全画面表示で閲覧できます。' },
-            { title: '端末標準の日本語翻訳', description: 'Androidの対応端末ではリーダー内で日本語訳を表示し、原文と切り替えできます。翻訳言語データの準備が必要で、対応端末での利用には翻訳言語データの準備が必要です。' },
+            { title: '端末標準の日本語翻訳', description: 'Androidの対応端末ではリーダー内で日本語訳を表示し、原文と切り替えできます。翻訳に対応する端末と必要な言語データが必要です。' },
             { title: 'ループスクロール', description: '通常一覧・ピン留め・アーカイブ・タグフォルダで、先頭と末尾をつないで移動できます。余白がある場合は下寄せ表示になります。' },
             { title: 'スクロール振動', description: '1行分のスクロールで振動。設定からオフ・弱・中・強を選択できます。' },
             { title: 'タグ別フォルダ', description: 'タグごとにメモを分類し、フォルダ内の件数を表示。最近使ったタグの候補も表示します。' },
@@ -59,6 +59,12 @@ const { project } = Astro.props as { project: Project };
       </section>
     )}
     {project.tested && <p class="muted">動作確認：利用者による実機動作・実用テスト確認済み（現行機能）。将来予定の機能やすべての動作環境を保証するものではありません。</p>}
+    {project.highlights && project.highlights.length > 0 && (
+      <section aria-labelledby="highlights-heading">
+        <h2 id="highlights-heading">主な機能・特徴</h2>
+        <ul class="feature-list">{project.highlights.map((feature) => <li>{feature}</li>)}</ul>
+      </section>
+    )}
     <section aria-labelledby="links-heading">
       <h2 id="links-heading">関連リンク</h2>
       <div class="detail-actions">
