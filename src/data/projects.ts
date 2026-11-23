@@ -20,7 +20,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'ui-studio', name: '会議ノート（旧 UI Studio）', category: '開発ツール',
-    description: 'PDF図面に線・図形・文字を重ねて会議の検討事項を記録するPCブラウザ用「会議ノート」（旧UI Studio）。PDF背景、レイヤー、スタンプ、HTMLスライド取込・注釈、AI向け構造化JSON出力に対応。ビルド済みHTMLをオフラインで利用できる試作版。',
+    description: 'PDF図面やHTMLスライドに線・図形・文字で書き込み、会議の検討事項を記録するPCブラウザ用ツール。補助線・スマート吸着、レイヤー、範囲指定スタンプ、ベクターPDF・注釈PDF、AI修正指示JSON出力に対応。ビルド済みHTMLをオフライン利用できる試作版。',
     status: '開発中', repository: 'https://github.com/viaNEONIA/UI-studio', featured: true,
     tested: true,
     highlights: ["PDF図面やHTMLスライドを読み込み、線・図形・文字で注釈","レイヤー・グループ・スタンプ・補助線で会議中の編集を効率化","HTMLスライドへの修正指示をAI向け構造化JSONとして出力","ビルド済みHTMLをChrome・Edgeで開きオフライン利用"],
