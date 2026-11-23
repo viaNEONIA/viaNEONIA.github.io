@@ -22,6 +22,55 @@ const { project } = Astro.props as { project: Project };
     <p class="eyebrow">{project.category} · {project.status}{project.tested ? ' · 実機・実用テスト確認済み' : ''}</p>
     <h1>{project.name}</h1>
     <p class="project-lead">{project.description}</p>
+    {project.slug === 'ui-studio' && (
+      <>
+        <section aria-labelledby="meeting-purpose">
+          <h2 id="meeting-purpose">会議ノートでできること</h2>
+          <p>PDFの図面や画像を背景に、線・図形・文字を素早く書き込み、打ち合わせ中の確認事項や決定内容を記録するPC向けツールです。Teamsなどでブラウザ画面を共有しながら、図面の位置関係や設備の割付けを確認できます。UIラフや資料への注釈にも利用できます。</p>
+          <p>ビルド済みのHTMLファイルをChromeまたはEdgeで開いて使う方式で、利用時のサーバーやNode.jsは不要です。旧名称はUI Studioです。</p>
+        </section>
+        <section aria-labelledby="meeting-features">
+          <h2 id="meeting-features">機能を詳しく紹介</h2>
+          <div class="memo-feature-grid">
+            {[
+              {title:'PDF図面・画像の取込',description:'PDFをページごとに最背面の背景レイヤーとして読み込みます。元PDFを保持し、拡大率に応じて再描画。背景の表示、濃さ、差し替え、ロック解除に対応します。'},
+              {title:'ページと用紙サイズ',description:'ページの追加・複製・名称変更に対応。A1〜A4の縦横、スマートフォン・タブレット・各種画面サイズ、自由寸法を選択できます。'},
+              {title:'線・図形・テキスト',description:'直線、矢印、折れ線、曲線、四角形、円・楕円、三角形、ペン、蛍光マーカー、文字、引き出し線付きテキストを配置。枠線と塗りの色・透明度も設定できます。'},
+              {title:'補助線と位置合わせ',description:'水平・垂直・2点補助線、端・中心・三分割点などへのスマート吸着、角度固定、2点間の中央配置に対応。Shiftによる水平・垂直制約も利用できます。'},
+              {title:'オブジェクト編集',description:'配置後の移動、サイズ変更、頂点・制御点編集、複数選択、複製、整列、Undo/Redoに対応。グループ化・結合・分解を使い分けられます。'},
+              {title:'レイヤー管理',description:'レイヤーの前後移動、ロック、表示管理に対応。PDF背景と書き込みを分けて扱い、会議中の誤操作を減らせます。'},
+              {title:'スタンプ作成',description:'画像の登録・再配置に加え、画面内の指定範囲からスタンプを作成できます。登録前プレビュー、背景の有無、透過、不透明度の調整に対応します。'},
+              {title:'会議表示・閲覧モード',description:'会議表示で左右の編集パネルを隠し、閲覧モードでは編集を停止。中ボタンドラッグや矢印キーで移動し、ホイールで拡大縮小できます。'},
+              {title:'編集データの保存',description:'JSONでページ・図形・補助線などを保存。ZIPでは元PDFや設定を含めて保存・復元できます。自動復元機能もありますが、端末移行にはファイル保存が必要です。'},
+              {title:'PDF出力と注釈',description:'通常PDFは元PDFと追加の線・文字をベクター合成。注釈編集用PDFでは対応する図形や文字をPDF注釈として出力し、コメント・作成者・日時も扱えます。'},
+              {title:'HTML・PNG・PPTX出力',description:'全ページの閲覧用HTML、現在ページのPNG、1ページを1枚の画像スライドにしたPPTXを出力できます。PPTX内の文字・図形の個別編集には非対応です。'},
+              {title:'HTMLスライドとAI修正指示',description:'ローカルHTMLスライドを静的な背景として取り込み、注釈を追加。対象HTML要素と修正指示を結び付け、座標・セレクター・原本ハッシュなどを含むAI向けJSONを出力できます。'}
+            ].map((item)=>(
+              <article class="memo-feature"><h3>{item.title}</h3><p>{item.description}</p></article>
+            ))}
+          </div>
+        </section>
+        <section aria-labelledby="meeting-workflow">
+          <h2 id="meeting-workflow">会議での利用例</h2>
+          <ol>
+            <li>図面PDFを読み込み、背景レイヤーとして固定します。</li>
+            <li>照明やスイッチの割付けを補助線・中心吸着で検討します。</li>
+            <li>決定事項を矢印・引き出し線付きテキストで記録します。</li>
+            <li>会議中は会議表示に切り替えて資料を共有します。</li>
+            <li>終了後は編集用ZIPを保存し、共有用PDFを出力します。</li>
+          </ol>
+        </section>
+        <section aria-labelledby="meeting-download">
+          <h2 id="meeting-download">入手・起動方法</h2>
+          <p><a href="https://github.com/viaNEONIA/UI-studio/releases/tag/latest-dev">GitHub Releasesの最新開発版</a>から <code>kaigi-note.zip</code> を取得し、展開した <code>index.html</code> をPCのChromeまたはEdgeで開きます。編集の再開にはJSONまたはZIPを保存してください。</p>
+        </section>
+        <section aria-labelledby="meeting-notes">
+          <h2 id="meeting-notes">対応範囲と注意点</h2>
+          <p>現在は試作版です。PDF注釈のAcrobatでの再編集には最終確認待ちの項目があります。HTMLスライドの取込は静的描画であり、JavaScriptや外部CSSを実行せず、元HTMLの要素を直接編集するものではありません。PPTXは画像化したスライドです。</p>
+          <p>引き出し線付きテキストの四隅リサイズ、円・楕円の中心表示・中心スナップ、操作メニュー再配置はREADME記載のPR #45に含まれる変更で、mainへの統合状況は別途確認が必要です。</p>
+        </section>
+      </>
+    )}
     {project.slug === 'android-memo' && (
       <section aria-labelledby="memo-features-heading" class="memo-feature-showcase">
         <h2 id="memo-features-heading">主な機能・最新アップデート</h2>
